@@ -466,8 +466,8 @@ def setup_and_solve(n_dies, n_assemblers, n_mills, n_lathes, demand_seed, produc
         "Constraints:", prob.numConstraints(),
         "\nVariables:", prob.numVariables())
 
-    # prob.solve(GUROBI_CMD(msg = True, timeLimit=1800))
-    prob.solve(PULP_CBC_CMD(msg = True, timeLimit=1800))
+    prob.solve(GUROBI_CMD(msg = True, timeLimit=1800))
+    # prob.solve(PULP_CBC_CMD(msg = True, timeLimit=1800))
     
     print(str(value(prob.objective)), LpStatus[prob.status])
 
