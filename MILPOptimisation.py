@@ -14,7 +14,7 @@ def load_data():
     '''
     
     # read data in and reformat
-    jobs_df = pd.read_csv(os.getcwd() + r'\Data\step_1_data.csv')
+    jobs_df = pd.read_csv(os.getcwd() + '/Data/step_1_data.csv')
     for col in jobs_df: 
         if type(jobs_df[col][0]) == str: 
             jobs_df[col] = jobs_df[col].str.lower()
@@ -436,7 +436,7 @@ def setup_and_solve(n_dies, n_assemblers, n_mills, n_lathes, demand_seed, produc
     
     jobs_df = load_data()
 
-    demand_df = pd.read_csv(r'../Demand Modelling/data/simple_demand_forecast.csv')
+    demand_df = pd.read_csv('./Data/simple_demand_forecast.csv')
     daily_demand = find_daily_demand(demand_df, demand_seed)
 
     O = init_operators(n_dies, n_assemblers, n_mills, n_lathes)
